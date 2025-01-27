@@ -26,4 +26,4 @@ gitHooks {
     createHooks()
 }
 
-rootProject.name = "Template-for-Kotlin-Multiplatform-Projects".lowercase()
+rootProject.name = "kotlin-symmetric-matrix".lowercase()
