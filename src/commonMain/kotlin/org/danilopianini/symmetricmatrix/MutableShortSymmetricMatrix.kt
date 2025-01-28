@@ -1,7 +1,7 @@
 package org.danilopianini.symmetricmatrix
 
 /**
- * Application entrypoint.
+ * A mutable symmetric matrix of shorts.
  */
 class MutableShortSymmetricMatrix(
     override val size: Int,

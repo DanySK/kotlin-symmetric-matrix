@@ -1,7 +1,7 @@
 package org.danilopianini.symmetricmatrix
 
 /**
- * Application entrypoint.
+ * A mutable symmetric matrix of booleans.
  */
 class MutableBooleanSymmetricMatrix(
     override val size: Int,
