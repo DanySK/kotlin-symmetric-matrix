@@ -4,15 +4,15 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- *
+ * Indexing functions for symmetric matrices.
  */
 abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     protected val internalSize = size * (size + 1) / 2
 
-    protected fun indicesFromIndex(
-        size: Int,
-        index: Int,
-    ): Pair<Int, Int> {
+    /**
+     * Given an [index] in the internal representation of the matrix, return the corresponding indices.
+     */
+    protected fun indicesFromIndex(index: Int): Pair<Int, Int> {
         require(index in 0 until internalSize) {
             "Invalid index: $index, not in [0, $internalSize)"
         }
@@ -25,6 +25,9 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
         return Pair(min(i, j), max(i, j))
     }
 
+    /**
+     * Given two indices ([i], [j]), return the corresponding index in the internal representation of the matrix.
+     */
     protected fun indexOf(
         i: Int,
         j: Int,
