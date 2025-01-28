@@ -1,3 +1,40 @@
+## 1.0.0 (2025-01-28)
+
+### ⚠ BREAKING CHANGES
+
+* add factory methods for readonly versions of the symmetric matrix
+* fix the project name
+
+### Features
+
+* add `MutableCharSymmetricMatrix` ([d668818](https://github.com/DanySK/kotlin-symmetric-matrix/commit/d668818262f331e67517489ad6eab7eca1a7e979))
+* add factory methods for readonly versions of the symmetric matrix ([e4eff88](https://github.com/DanySK/kotlin-symmetric-matrix/commit/e4eff8845a9b7cb3d3924841965acf7dac110e89))
+* add implementation of all supported array types ([#6](https://github.com/DanySK/kotlin-symmetric-matrix/issues/6)) ([b8eb054](https://github.com/DanySK/kotlin-symmetric-matrix/commit/b8eb054ded231235ef276a487fb258089163f10d))
+* base IntSymmetricMatrix implementation ([decead3](https://github.com/DanySK/kotlin-symmetric-matrix/commit/decead3d547bbe80bd0530b4b0ffc318e09b0256))
+* implement a more generic version of the matrices ([c4f59f6](https://github.com/DanySK/kotlin-symmetric-matrix/commit/c4f59f6def5f0670560718bdd3500eb55b5b832a))
+
+### Dependency updates
+
+* **deps:** update plugin gitsemver to v4.0.2 ([#5](https://github.com/DanySK/kotlin-symmetric-matrix/issues/5)) ([1196e61](https://github.com/DanySK/kotlin-symmetric-matrix/commit/1196e61d0b1ec718b836c4988746b10aa2643c90))
+* **deps:** update plugin multijvmtesting to v3.2.2 ([#2](https://github.com/DanySK/kotlin-symmetric-matrix/issues/2)) ([c2a25f3](https://github.com/DanySK/kotlin-symmetric-matrix/commit/c2a25f32659843f98cb7a3dd968edebf7ffd9071))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.20 ([#3](https://github.com/DanySK/kotlin-symmetric-matrix/issues/3)) ([a3fd207](https://github.com/DanySK/kotlin-symmetric-matrix/commit/a3fd20770d85d081c392547be63a2614192ff201))
+
+### Documentation
+
+* [@angelacorte](https://github.com/angelacorte) here are the types to complete ([b8391ab](https://github.com/DanySK/kotlin-symmetric-matrix/commit/b8391ab2d9d66de6d83805149b3f7e7b2b632809))
+
+### Build and continuous integration
+
+* cleanup the kotlintest import ([dac920b](https://github.com/DanySK/kotlin-symmetric-matrix/commit/dac920b3ffcb3582249313768321cf7791478f67))
+* drop kotest ([4d5b3c7](https://github.com/DanySK/kotlin-symmetric-matrix/commit/4d5b3c7dd8dc508a0f7f3713a79aaa8175c6fe84))
+* fix the project name ([328f7fa](https://github.com/DanySK/kotlin-symmetric-matrix/commit/328f7fad123eee22f4c4b753ec750b9d776046f2))
+* target Java 8 ([d2d7a99](https://github.com/DanySK/kotlin-symmetric-matrix/commit/d2d7a999a7196199f1dae6ab1d75bdd166dc259e))
+* use the deploy keys ([71d69cc](https://github.com/DanySK/kotlin-symmetric-matrix/commit/71d69cc8627b1da0beedf7163aae818e2a010a4f))
+
+### Style improvements
+
+* suppress warning ([a750dad](https://github.com/DanySK/kotlin-symmetric-matrix/commit/a750dad2cbca03b760c8cbb1fc5728a66d996593))
+
 ## [0.2.6](https://github.com/DanySK/template-for-kotlin-multiplatform-projects/compare/0.2.5...0.2.6) (2025-01-08)
 
 ### Bug Fixes
