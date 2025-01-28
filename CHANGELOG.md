@@ -1,3 +1,13 @@
+## [1.1.0](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.0.0...1.1.0) (2025-01-28)
+
+### Features
+
+* mark all factory functions `@JvmStatic` ([d441123](https://github.com/DanySK/kotlin-symmetric-matrix/commit/d441123d9ce03ac5fd01d70b104ed3d0ffb11b68))
+
+### Bug Fixes
+
+* add contents write permissions to the github token in release ([f50edd3](https://github.com/DanySK/kotlin-symmetric-matrix/commit/f50edd366dc0c377456748132895ddfa88430c21))
+
 ## 1.0.0 (2025-01-28)
 
 ### ⚠ BREAKING CHANGES
