@@ -4,9 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-
 class TestMutableDoubleSymmetricMatrix {
-
     @Test
     fun getReturnsCorrectValue() {
         val matrix = MutableDoubleSymmetricMatrix(3)

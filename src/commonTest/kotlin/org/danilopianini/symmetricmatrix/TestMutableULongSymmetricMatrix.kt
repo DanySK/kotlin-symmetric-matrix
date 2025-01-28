@@ -4,8 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class TestMutableULongSymmetricMatrix  {
-
+class TestMutableULongSymmetricMatrix {
     @Test
     fun getReturnsCorrectValue() {
         val matrix = MutableULongSymmetricMatrix(3)

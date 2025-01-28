@@ -5,7 +5,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class TestMutableUByteSymmetricMatrix {
-
     @Test
     fun getReturnsCorrectValue() {
         val matrix = MutableUByteSymmetricMatrix(3)

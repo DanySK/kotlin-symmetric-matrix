@@ -5,7 +5,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class TestMutableBooleanSymmetricMatrix {
-
     @Test
     fun getReturnsCorrectValue() {
         val matrix = MutableBooleanSymmetricMatrix(3)
