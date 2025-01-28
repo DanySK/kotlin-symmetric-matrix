@@ -28,6 +28,9 @@ interface SymmetricMatrix<T> : Iterable<T> {
      */
     fun column(j: Int): List<T>
 
+    /**
+     * Fill the matrix with the same element.
+     */
     companion object {
         /**
          * Create a symmetric matrix of [size] with the same [element].

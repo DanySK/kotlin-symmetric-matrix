@@ -14,6 +14,9 @@ interface MutableSymmetricMatrix<T> : SymmetricMatrix<T> {
         value: T,
     )
 
+    /**
+     * Fill the matrix with the same element.
+     */
     companion object {
         /**
          * Create a symmetric matrix of [size] with the same [element].
