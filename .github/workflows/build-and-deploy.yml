@@ -85,11 +85,8 @@ jobs:
           signing-password: ${{ secrets.SIGNING_PASSWORD }}
 
   release:
-    concurrency:
-      # Only one release job at a time per branch, as only master releases.
-      # Strictly sequential.
-      group: release-${{ github.workflow }}-${{ github.event.number || github.ref }}
-      cancel-in-progress: false
+    permissions:
+      contents: write
     needs:
       - check-secrets
       - staging-repo
