@@ -35,7 +35,7 @@ interface MutableSymmetricMatrix<T> : SymmetricMatrix<T> {
 
                 private val data: MutableList<T> =
                     MutableList(size * (size + 1) / 2) { i ->
-                        indicesFromIndex(size, i).let { (i, j) -> element(i, j) }
+                        indicesFromIndex(i).let { (i, j) -> element(i, j) }
                     }
 
                 override fun get(
