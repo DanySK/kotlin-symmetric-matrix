@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.0...1.1.1) (2025-01-28)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.1.10 ([#1](https://github.com/DanySK/kotlin-symmetric-matrix/issues/1)) ([95fc226](https://github.com/DanySK/kotlin-symmetric-matrix/commit/95fc226070d1beef460a045d12597d2e2922d060))
+
 ## [1.1.0](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.0.0...1.1.0) (2025-01-28)
 
 ### Features
