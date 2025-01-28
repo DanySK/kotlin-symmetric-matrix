@@ -31,6 +31,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
     /**
      * Fill the matrix with the same element.
      */
+    @Suppress("TooManyFunctions")
     companion object {
         /**
          * Create a symmetric matrix of [size] with the same [element].
