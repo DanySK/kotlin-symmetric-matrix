@@ -45,14 +45,9 @@ kotlin {
         val commonMain by getting { }
         val commonTest by getting {
             dependencies {
-                implementation(libs.bundles.kotlin.testing.common)
+                implementation(libs.kotlin.test)
             }
         }
-//        val jvmTest by getting {
-//            dependencies {
-//                implementation(libs.kotlin.test)
-//            }
-//        }
     }
 
     js(IR) {
