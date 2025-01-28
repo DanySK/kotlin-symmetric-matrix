@@ -1,5 +1,7 @@
 package org.danilopianini.symmetricmatrix
 
+import kotlin.jvm.JvmStatic
+
 /**
  * A symmetric matrix:
  * a matrix where the element at position (i, j) is the same as the element at position (j, i).
@@ -36,6 +38,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun <T> of(
             size: Int,
             element: T,
@@ -44,6 +47,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun <T> of(
             size: Int,
             element: (i: Int, j: Int) -> T,
@@ -54,6 +58,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofBoolean(
             size: Int,
             element: Boolean,
@@ -62,6 +67,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofBoolean(
             size: Int,
             element: (i: Int, j: Int) -> Boolean,
@@ -70,6 +76,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofChar(
             size: Int,
             element: Char,
@@ -78,6 +85,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofChar(
             size: Int,
             element: (i: Int, j: Int) -> Char,
@@ -86,6 +94,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofByte(
             size: Int,
             element: Byte,
@@ -94,6 +103,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofByte(
             size: Int,
             element: (i: Int, j: Int) -> Byte,
@@ -102,6 +112,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofShort(
             size: Int,
             element: Short,
@@ -110,6 +121,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofShort(
             size: Int,
             element: (i: Int, j: Int) -> Short,
@@ -118,6 +130,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofInt(
             size: Int,
             element: Int,
@@ -126,6 +139,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofInt(
             size: Int,
             element: (i: Int, j: Int) -> Int,
@@ -134,6 +148,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofLong(
             size: Int,
             element: Long,
@@ -142,6 +157,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofLong(
             size: Int,
             element: (i: Int, j: Int) -> Long,
@@ -150,6 +166,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofFloat(
             size: Int,
             element: Float,
@@ -158,6 +175,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofFloat(
             size: Int,
             element: (i: Int, j: Int) -> Float,
@@ -166,6 +184,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofDouble(
             size: Int,
             element: Double,
@@ -174,6 +193,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofDouble(
             size: Int,
             element: (i: Int, j: Int) -> Double,
@@ -182,6 +202,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofUByte(
             size: Int,
             element: UByte,
@@ -190,6 +211,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofUByte(
             size: Int,
             element: (i: Int, j: Int) -> UByte,
@@ -198,6 +220,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofUShort(
             size: Int,
             element: UShort,
@@ -206,6 +229,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofUShort(
             size: Int,
             element: (i: Int, j: Int) -> UShort,
@@ -214,6 +238,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofUInt(
             size: Int,
             element: UInt,
@@ -222,6 +247,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofUInt(
             size: Int,
             element: (i: Int, j: Int) -> UInt,
@@ -230,6 +256,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
+        @JvmStatic
         fun ofULong(
             size: Int,
             element: ULong,
@@ -238,6 +265,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].
          */
+        @JvmStatic
         fun ofULong(
             size: Int,
             element: (i: Int, j: Int) -> ULong,
