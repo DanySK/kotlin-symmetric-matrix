@@ -5,30 +5,31 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class TestMutableDoubleSymmetricMatrix {
+    val five = 5.5
     @Test
-    fun matrixWithSizeOne() {
+    fun `create a matrix with a single element`() {
         val matrix = MutableDoubleSymmetricMatrix(1)
         assertEquals(matrix.size, 1)
-        matrix[0, 0] = 5.0
-        assertEquals(5.0, matrix[0, 0])
+        matrix[0, 0] = five
+        assertEquals(five, matrix[0, 0])
     }
 
     @Test
-    fun getReturnsCorrectValue() {
+    fun `get should return the expected value`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
-        matrix[0, 1] = 1.5
-        assertEquals(1.5, matrix[0, 1])
+        matrix[0, 1] = five
+        assertEquals(five, matrix[0, 1])
     }
 
     @Test
-    fun setUpdatesValueCorrectly() {
+    fun `set should update value correctly`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
-        matrix[1, 2] = 2.5
-        assertEquals(2.5, matrix[1, 2])
+        matrix[1, 2] = five
+        assertEquals(five, matrix[1, 2])
     }
 
     @Test
-    fun getThrowsExceptionForInvalidIndices() {
+    fun `get throws exception for invalid indices`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
         assertFailsWith<IllegalArgumentException> {
             matrix[3, 0]
@@ -39,37 +40,38 @@ class TestMutableDoubleSymmetricMatrix {
     }
 
     @Test
-    fun setThrowsExceptionForInvalidIndices() {
+    fun `set throws exception for invalid indices`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
         assertFailsWith<IllegalArgumentException> {
-            matrix[3, 0] = 1.0
+            matrix[3, 0] = five
         }
         assertFailsWith<IllegalArgumentException> {
-            matrix[0, 3] = 1.0
+            matrix[0, 3] = five
         }
     }
 
     @Test
-    fun getReturnsSymmetricValue() {
+    fun `get should return symmetric value`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
-        matrix[1, 2] = 3.5
-        assertEquals(3.5, matrix[2, 1])
+        matrix[1, 2] = five
+        assertEquals(five, matrix[2, 1])
     }
 
     @Test
-    fun setUpdatesSymmetricValueCorrectly() {
+    fun `set should updates symmetric value correctly`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
-        matrix[2, 1] = 4.5
-        assertEquals(4.5, matrix[1, 2])
+        matrix[2, 1] = five
+        assertEquals(five, matrix[1, 2])
     }
 
     @Test
     fun `regression test given a matrix of size 4 doing operations on 0-2 would change also the index 1-1`() {
+        val seven = 7.0
         val matrix = MutableDoubleSymmetricMatrix(4)
-        matrix[1, 1] = 5.0
-        assertEquals(5.0, matrix[1, 1])
-        matrix[0, 2] = 7.5
-        assertEquals(7.5, matrix[0, 2])
-        assertEquals(5.0, matrix[1, 1])
+        matrix[1, 1] = five
+        assertEquals(five, matrix[1, 1])
+        matrix[0, 2] = seven
+        assertEquals(seven, matrix[0, 2])
+        assertEquals(five, matrix[1, 1])
     }
 }
