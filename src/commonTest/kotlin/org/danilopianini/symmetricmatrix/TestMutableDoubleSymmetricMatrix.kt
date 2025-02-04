@@ -5,7 +5,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class TestMutableDoubleSymmetricMatrix {
-
     @Test
     fun matrixWithSizeOne() {
         val matrix = MutableDoubleSymmetricMatrix(1)
