@@ -34,12 +34,12 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     ): Int =
         max(i, j).let { max ->
             require(max in 0 until size) {
-                "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
+                "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
             }
             max * (max + 1) / 2 +
                 min(i, j).also { min ->
                     require(min in 0 until size) {
-                        "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
+                        "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
                     }
                 }
         }
