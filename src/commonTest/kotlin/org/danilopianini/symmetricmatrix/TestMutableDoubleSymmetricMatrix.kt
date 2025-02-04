@@ -65,7 +65,7 @@ class TestMutableDoubleSymmetricMatrix {
     }
 
     @Test
-    fun `regression test given a matrix of size 4 doing operations on (0,2) would change also the index (1,1)`() {
+    fun `regression test given a matrix of size 4 doing operations on [0-2] would change also the index [1-1]`() {
         val matrix = MutableDoubleSymmetricMatrix(4)
         matrix[1, 1] = 5.0
         assertEquals(5.0, matrix[1, 1])
