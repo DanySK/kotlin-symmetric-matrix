@@ -5,6 +5,15 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class TestMutableDoubleSymmetricMatrix {
+
+    @Test
+    fun matrixWithSizeOne() {
+        val matrix = MutableDoubleSymmetricMatrix(1)
+        assertEquals(matrix.size, 1)
+        matrix[0, 0] = 5.0
+        assertEquals(5.0, matrix[0, 0])
+    }
+
     @Test
     fun getReturnsCorrectValue() {
         val matrix = MutableDoubleSymmetricMatrix(3)
@@ -53,5 +62,15 @@ class TestMutableDoubleSymmetricMatrix {
         val matrix = MutableDoubleSymmetricMatrix(3)
         matrix[2, 1] = 4.5
         assertEquals(4.5, matrix[1, 2])
+    }
+
+    @Test
+    fun `regression test given a matrix of size 4 doing operations on (0,2) would change also the index (1,1)`() {
+        val matrix = MutableDoubleSymmetricMatrix(4)
+        matrix[1, 1] = 5.0
+        assertEquals(5.0, matrix[1, 1])
+        matrix[0, 2] = 7.5
+        assertEquals(7.5, matrix[0, 2])
+        assertEquals(5.0, matrix[1, 1])
     }
 }
