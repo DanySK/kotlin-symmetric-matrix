@@ -1,3 +1,18 @@
+## [1.1.2](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.1...1.1.2) (2025-02-05)
+
+### Dependency updates
+
+* **deps:** update plugin publishoncentral to v8.0.3 ([#9](https://github.com/DanySK/kotlin-symmetric-matrix/issues/9)) ([f1cf141](https://github.com/DanySK/kotlin-symmetric-matrix/commit/f1cf141d65af19151971c7d13118220f61ba98aa))
+
+### Bug Fixes
+
+* fix bugged index mapping ([#10](https://github.com/DanySK/kotlin-symmetric-matrix/issues/10)) ([8c054f7](https://github.com/DanySK/kotlin-symmetric-matrix/commit/8c054f720af20e405863210ce5d484a678cdb890))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.7 ([#7](https://github.com/DanySK/kotlin-symmetric-matrix/issues/7)) ([ff6c87c](https://github.com/DanySK/kotlin-symmetric-matrix/commit/ff6c87c49f123faa84ecaea27d15fd2037017eca))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.8 ([#8](https://github.com/DanySK/kotlin-symmetric-matrix/issues/8)) ([19d2e03](https://github.com/DanySK/kotlin-symmetric-matrix/commit/19d2e0371b26bbc59580f98dd900aff3afa11a44))
+
 ## [1.1.1](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.0...1.1.1) (2025-01-28)
 
 ### Dependency updates
