@@ -51,7 +51,7 @@ class TestMutableDoubleSymmetricMatrix {
     }
 
     @Test
-    fun `get should return symmetric value`() {
+    fun `get should work symmetrically`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
         matrix[1, 2] = SAMPLE_VALUE
         assertEquals(SAMPLE_VALUE, matrix[2, 1])
