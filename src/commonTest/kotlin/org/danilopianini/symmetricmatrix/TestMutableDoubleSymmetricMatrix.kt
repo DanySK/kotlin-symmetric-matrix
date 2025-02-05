@@ -58,7 +58,7 @@ class TestMutableDoubleSymmetricMatrix {
     }
 
     @Test
-    fun `set should updates symmetric value correctly`() {
+    fun `set should update values symmetrically`() {
         val matrix = MutableDoubleSymmetricMatrix(3)
         matrix[2, 1] = SAMPLE_VALUE
         assertEquals(SAMPLE_VALUE, matrix[1, 2])
