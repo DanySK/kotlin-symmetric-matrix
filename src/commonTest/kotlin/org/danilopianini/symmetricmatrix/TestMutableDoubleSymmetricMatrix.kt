@@ -6,6 +6,7 @@ import kotlin.test.assertFailsWith
 
 class TestMutableDoubleSymmetricMatrix {
     val five = 5.5
+
     @Test
     fun `create a matrix with a single element`() {
         val matrix = MutableDoubleSymmetricMatrix(1)
@@ -65,7 +66,7 @@ class TestMutableDoubleSymmetricMatrix {
     }
 
     @Test
-    fun `regression test given a matrix of size 4 doing operations on 0-2 would change also the index 1-1`() {
+    fun `on a 4x4, changing <0.2> does not change <1:1>~!@#$%*()_-+={}[]:;?/\`() {
         val seven = 7.0
         val matrix = MutableDoubleSymmetricMatrix(4)
         matrix[1, 1] = five
