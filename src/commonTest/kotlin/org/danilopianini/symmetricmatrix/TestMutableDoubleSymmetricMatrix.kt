@@ -66,7 +66,7 @@ class TestMutableDoubleSymmetricMatrix {
     }
 
     @Test
-    fun `on a 4x4, changing <0.2> does not change <1:1>~!@#$%*()_-+={}[]:;?/\`() {
+    fun `on a 4x4 changing 0-2 does not change 1-1`() {
         val seven = 7.0
         val matrix = MutableDoubleSymmetricMatrix(4)
         matrix[1, 1] = five
