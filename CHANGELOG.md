@@ -1,3 +1,41 @@
+## [1.1.6](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.5...1.1.6) (2025-08-14)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.2.10 ([#142](https://github.com/DanySK/kotlin-symmetric-matrix/issues/142)) ([fbc78bc](https://github.com/DanySK/kotlin-symmetric-matrix/commit/fbc78bc9af6d4abbe7b31c3ceacd9061087a08d8))
+* **deps:** update dependency gradle to v8.14.3 ([4af38e7](https://github.com/DanySK/kotlin-symmetric-matrix/commit/4af38e77a7fe6bd49a5626103a34e0666c000f11))
+* **deps:** update dependency gradle to v9 ([#128](https://github.com/DanySK/kotlin-symmetric-matrix/issues/128)) ([6696aaf](https://github.com/DanySK/kotlin-symmetric-matrix/commit/6696aaf6618230cf57c930944977d384b21b3700))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.136 ([3d18156](https://github.com/DanySK/kotlin-symmetric-matrix/commit/3d181564067ac0923a31aa1f0910f63068478d99))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.137 ([#121](https://github.com/DanySK/kotlin-symmetric-matrix/issues/121)) ([4dfc752](https://github.com/DanySK/kotlin-symmetric-matrix/commit/4dfc752519ded2337efa4378e5894c16803c04ee))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.138 ([#122](https://github.com/DanySK/kotlin-symmetric-matrix/issues/122)) ([7ebf356](https://github.com/DanySK/kotlin-symmetric-matrix/commit/7ebf356d82cc1bd001a9b79293717ddcd7072a01))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.139 ([#131](https://github.com/DanySK/kotlin-symmetric-matrix/issues/131)) ([b1ce587](https://github.com/DanySK/kotlin-symmetric-matrix/commit/b1ce5875597e3d49ed1ec865f1f4233d191b633c))
+* **deps:** update node.js to v22.17.1 ([#123](https://github.com/DanySK/kotlin-symmetric-matrix/issues/123)) ([39fe8f5](https://github.com/DanySK/kotlin-symmetric-matrix/commit/39fe8f52a6de10ea5b0c2d29d2abdf7c58b92061))
+* **deps:** update node.js to v22.18.0 ([#129](https://github.com/DanySK/kotlin-symmetric-matrix/issues/129)) ([925ad21](https://github.com/DanySK/kotlin-symmetric-matrix/commit/925ad215aeb0b11cd848ac0b34bf3e1d062d194a))
+* **deps:** update plugin com.gradle.develocity to v4.1 ([#120](https://github.com/DanySK/kotlin-symmetric-matrix/issues/120)) ([bc3f972](https://github.com/DanySK/kotlin-symmetric-matrix/commit/bc3f972c771d8e493ef4bb1600c6ce093c12ac62))
+* **deps:** update plugin gitsemver to v5.1.7 ([83f72ec](https://github.com/DanySK/kotlin-symmetric-matrix/commit/83f72ecc59d8304338c209d00f13879b1694f4ac))
+* **deps:** update plugin gitsemver to v6 ([#138](https://github.com/DanySK/kotlin-symmetric-matrix/issues/138)) ([2041053](https://github.com/DanySK/kotlin-symmetric-matrix/commit/204105317556268937b4523e330f0c6a68d06294))
+* **deps:** update plugin kotlin-qa to v0.90.2 ([3e1a77e](https://github.com/DanySK/kotlin-symmetric-matrix/commit/3e1a77e29507c7e103e746dd02612053e5a64cbb))
+* **deps:** update plugin kotlin-qa to v0.91.0 ([fda3d77](https://github.com/DanySK/kotlin-symmetric-matrix/commit/fda3d778926ed3bf06b5757867def52e0c042e61))
+* **deps:** update plugin kotlin-qa to v0.92.0 ([#125](https://github.com/DanySK/kotlin-symmetric-matrix/issues/125)) ([952c8d6](https://github.com/DanySK/kotlin-symmetric-matrix/commit/952c8d6355d102e5fced69ca415cefd06718c592))
+* **deps:** update plugin kotlin-qa to v0.93.0 ([#126](https://github.com/DanySK/kotlin-symmetric-matrix/issues/126)) ([99eefb8](https://github.com/DanySK/kotlin-symmetric-matrix/commit/99eefb81abf00b1aede8e1432f337645ceacceea))
+* **deps:** update plugin multijvmtesting to v3.5.4 ([7741943](https://github.com/DanySK/kotlin-symmetric-matrix/commit/7741943d9d53106b91a2fe5bba8024b25aeaf73b))
+* **deps:** update plugin multijvmtesting to v3.6.0 ([#124](https://github.com/DanySK/kotlin-symmetric-matrix/issues/124)) ([f41b99f](https://github.com/DanySK/kotlin-symmetric-matrix/commit/f41b99f42deed56bc1829f26c48ab71bb40383a6))
+* **deps:** update plugin multijvmtesting to v3.6.1 ([#133](https://github.com/DanySK/kotlin-symmetric-matrix/issues/133)) ([7920382](https://github.com/DanySK/kotlin-symmetric-matrix/commit/79203826433226b9e22ccb256593af4155ef4d8d))
+* **deps:** update plugin multijvmtesting to v4 ([#134](https://github.com/DanySK/kotlin-symmetric-matrix/issues/134)) ([889e02d](https://github.com/DanySK/kotlin-symmetric-matrix/commit/889e02d52e5a5afbe64921b21ce77f9c53fba3c9))
+* **deps:** update plugin npm-publish to v4.0.7 ([1ce995e](https://github.com/DanySK/kotlin-symmetric-matrix/commit/1ce995e5d9b84c6bb78c6667ac4e2a6772ea84c3))
+* **deps:** update plugin npm-publish to v4.1.0 ([#141](https://github.com/DanySK/kotlin-symmetric-matrix/issues/141)) ([c18ccc9](https://github.com/DanySK/kotlin-symmetric-matrix/commit/c18ccc9bf019af3d418c70936b35a32e6c46ffc6))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.28 ([#118](https://github.com/DanySK/kotlin-symmetric-matrix/issues/118)) ([7c0d937](https://github.com/DanySK/kotlin-symmetric-matrix/commit/7c0d937d8e5fb17407faf82d672423ce404ed0e4))
+* **deps:** update plugin publishoncentral to v9.0.8 ([#119](https://github.com/DanySK/kotlin-symmetric-matrix/issues/119)) ([62e3f9d](https://github.com/DanySK/kotlin-symmetric-matrix/commit/62e3f9d11012c73a60dbab72b8d6ae33cc986452))
+* **deps:** update plugin publishoncentral to v9.1.0 ([#127](https://github.com/DanySK/kotlin-symmetric-matrix/issues/127)) ([ddd71f2](https://github.com/DanySK/kotlin-symmetric-matrix/commit/ddd71f2362c7d49b2ed0b7fe9f748b8fc9a98f2e))
+* **deps:** update plugin publishoncentral to v9.1.2 ([#139](https://github.com/DanySK/kotlin-symmetric-matrix/issues/139)) ([5997f1b](https://github.com/DanySK/kotlin-symmetric-matrix/commit/5997f1bc4ae1470ea44dbc3738c3789a42e61aa2))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.3.0 ([#135](https://github.com/DanySK/kotlin-symmetric-matrix/issues/135)) ([a726c85](https://github.com/DanySK/kotlin-symmetric-matrix/commit/a726c85460cb0dd8f9f5512c719241dc68665000))
+* **deps:** update actions/checkout action to v5 ([#136](https://github.com/DanySK/kotlin-symmetric-matrix/issues/136)) ([2f2261f](https://github.com/DanySK/kotlin-symmetric-matrix/commit/2f2261f58bc19b0b080307f1eb200d6d673f3354))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.2 ([#130](https://github.com/DanySK/kotlin-symmetric-matrix/issues/130)) ([cdd53a4](https://github.com/DanySK/kotlin-symmetric-matrix/commit/cdd53a4291e58c7218e45c4473d51899f5926358))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.3 ([#132](https://github.com/DanySK/kotlin-symmetric-matrix/issues/132)) ([371e83e](https://github.com/DanySK/kotlin-symmetric-matrix/commit/371e83e7bde086a61a695a5c11db8c13c049d659))
+
 ## [1.1.5](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.4...1.1.5) (2025-07-10)
 
 ### Dependency updates
