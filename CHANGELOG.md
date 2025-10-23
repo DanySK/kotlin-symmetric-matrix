@@ -1,3 +1,12 @@
+## [1.1.9](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.8...1.1.9) (2025-10-23)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.2.21 ([#203](https://github.com/DanySK/kotlin-symmetric-matrix/issues/203)) ([5cd23ea](https://github.com/DanySK/kotlin-symmetric-matrix/commit/5cd23ea1b7a4ef32f10fbeb788afed11987567e8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.148 ([#200](https://github.com/DanySK/kotlin-symmetric-matrix/issues/200)) ([3d4776c](https://github.com/DanySK/kotlin-symmetric-matrix/commit/3d4776cd2e84c13147e99b9b0332b113ed41defc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.149 ([#201](https://github.com/DanySK/kotlin-symmetric-matrix/issues/201)) ([cfb4af2](https://github.com/DanySK/kotlin-symmetric-matrix/commit/cfb4af2170ed45a8fc242a81eae1bc3e4748214d))
+* **deps:** update node.js to v22.21.0 ([#202](https://github.com/DanySK/kotlin-symmetric-matrix/issues/202)) ([c33a17b](https://github.com/DanySK/kotlin-symmetric-matrix/commit/c33a17b1a0a151de360e254782cc30593aa92a16))
+
 ## [1.1.8](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.7...1.1.8) (2025-10-15)
 
 ### Dependency updates
