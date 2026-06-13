@@ -15,7 +15,10 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
             for (j in 0 until i) {
                 val value = function(i, j)
                 val opposite = function(j, i)
-                require(value == opposite) {
+                val equal = value == opposite ||
+                    (value is Float && opposite is Float && value.isNaN() && opposite.isNaN()) ||
+                    (value is Double && opposite is Double && value.isNaN() && opposite.isNaN())
+                require(equal) {
                     "Invalid symmetric function: element at ($i, $j) is $value, but element at ($j, $i) is $opposite"
                 }
                 set(indexOf(i, j), value)
