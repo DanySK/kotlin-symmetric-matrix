@@ -17,15 +17,14 @@ interface MutableSymmetricMatrix<T> : SymmetricMatrix<T> {
         /**
          * Create a symmetric matrix of [size] with the same [element].
          */
-        fun <T> of(size: Int, element: T): MutableSymmetricMatrix<T> =
+        inline fun <reified T> of(size: Int, element: T): MutableSymmetricMatrix<T> =
             object : AbstractSymmetricMatrix<T>(), MutableSymmetricMatrix<T> {
 
-                private val data: Array<Any?> = arrayOfNulls<Any?>(internalSize).also { it.fill(element) }
+                private val data: Array<T> = Array(internalSize) { element }
 
                 @Suppress("NoNameShadowing") // Both definitions of "size" belong to the public API
                 override val size: Int get() = size
 
-                @Suppress("UNCHECKED_CAST")
                 override fun get(i: Int, j: Int): T = data[indexOf(i, j)] as T
 
                 override fun set(i: Int, j: Int, value: T) {
