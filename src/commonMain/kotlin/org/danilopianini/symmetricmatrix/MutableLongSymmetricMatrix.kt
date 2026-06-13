@@ -3,22 +3,22 @@ package org.danilopianini.symmetricmatrix
 /**
  * A mutable symmetric matrix of longs.
  */
-class MutableLongSymmetricMatrix(
-    override val size: Int,
-) : AbstractSymmetricMatrix<Long>(),
+class MutableLongSymmetricMatrix(override val size: Int, init: (Int, Int) -> Long) :
+    AbstractSymmetricMatrix<Long>(),
     MutableSymmetricMatrix<Long> {
-    private val data: LongArray = LongArray(size * (size + 1) / 2)
+    private val data: LongArray = LongArray(internalSize(size))
 
-    override operator fun get(
-        i: Int,
-        j: Int,
-    ): Long = data[indexOf(i, j)]
+    constructor(size: Int) : this(size, 0L)
 
-    override operator fun set(
-        i: Int,
-        j: Int,
-        value: Long,
-    ) {
+    constructor(size: Int, value: Long) : this(size, { _, _ -> value })
+
+    init {
+        fillWithSymmetric(init) { index, value -> data[index] = value }
+    }
+
+    override operator fun get(i: Int, j: Int): Long = data[indexOf(i, j)]
+
+    override operator fun set(i: Int, j: Int, value: Long) {
         data[indexOf(i, j)] = value
     }
 }

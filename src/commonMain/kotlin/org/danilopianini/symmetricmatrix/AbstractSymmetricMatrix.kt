@@ -7,7 +7,21 @@ import kotlin.math.min
  * Indexing functions for symmetric matrices.
  */
 abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
-    protected val internalSize = size * (size + 1) / 2
+    protected val internalSize: Int get() = internalSize(size)
+
+    protected fun fillWithSymmetric(function: (i: Int, j: Int) -> T, set: (index: Int, value: T) -> Unit) {
+        for (i in 0 until size) {
+            set(indexOf(i, i), function(i, i))
+            for (j in 0 until i) {
+                val value = function(i, j)
+                val opposite = function(j, i)
+                require(value == opposite) {
+                    "Invalid symmetric function: element at ($i, $j) is $value, but element at ($j, $i) is $opposite"
+                }
+                set(indexOf(i, j), value)
+            }
+        }
+    }
 
     /**
      * Given an [index] in the internal representation of the matrix, return the corresponding indices.
@@ -28,21 +42,17 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     /**
      * Given two indices ([i], [j]), return the corresponding index in the internal representation of the matrix.
      */
-    protected fun indexOf(
-        i: Int,
-        j: Int,
-    ): Int =
-        max(i, j).let { max ->
-            require(max in 0 until size) {
-                "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
-            }
-            max * (max + 1) / 2 +
-                min(i, j).also { min ->
-                    require(min in 0 until size) {
-                        "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
-                    }
-                }
+    protected fun indexOf(i: Int, j: Int): Int = max(i, j).let { max ->
+        require(max in 0 until size) {
+            "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
         }
+        max * (max + 1) / 2 +
+            min(i, j).also { min ->
+                require(min in 0 until size) {
+                    "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
+                }
+            }
+    }
 
     override fun row(i: Int): List<T> = (0 until size).map { j -> get(i, j) }
 
@@ -51,4 +61,8 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     override fun toString(): String = "SymmetricMatrix($size, $size)"
 
     override fun iterator(): Iterator<T> = (0 until size).asSequence().flatMap { row(it).asSequence() }.iterator()
+
+    protected companion object {
+        fun internalSize(size: Int): Int = size * (size + 1) / 2
+    }
 }

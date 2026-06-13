@@ -3,25 +3,23 @@ package org.danilopianini.symmetricmatrix
 /**
  * A mutable symmetric matrix of unsigned shorts.
  */
-class MutableUShortSymmetricMatrix(
-    override val size: Int,
-) : AbstractSymmetricMatrix<UShort>(),
+@OptIn(ExperimentalUnsignedTypes::class)
+class MutableUShortSymmetricMatrix(override val size: Int, init: (Int, Int) -> UShort) :
+    AbstractSymmetricMatrix<UShort>(),
     MutableSymmetricMatrix<UShort> {
-    @OptIn(ExperimentalUnsignedTypes::class)
-    private val data: UShortArray = UShortArray(size * (size + 1) / 2)
+    private val data: UShortArray = UShortArray(internalSize(size))
 
-    @OptIn(ExperimentalUnsignedTypes::class)
-    override operator fun get(
-        i: Int,
-        j: Int,
-    ): UShort = data[indexOf(i, j)]
+    constructor(size: Int) : this(size, 0.toUShort())
 
-    @OptIn(ExperimentalUnsignedTypes::class)
-    override operator fun set(
-        i: Int,
-        j: Int,
-        value: UShort,
-    ) {
+    constructor(size: Int, value: UShort) : this(size, { _, _ -> value })
+
+    init {
+        fillWithSymmetric(init) { index, value -> data[index] = value }
+    }
+
+    override operator fun get(i: Int, j: Int): UShort = data[indexOf(i, j)]
+
+    override operator fun set(i: Int, j: Int, value: UShort) {
         data[indexOf(i, j)] = value
     }
 }

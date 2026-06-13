@@ -50,7 +50,7 @@ kotlin {
         }
     }
 
-    js(IR) {
+    js {
         browser()
         nodejs()
         binaries.library()
