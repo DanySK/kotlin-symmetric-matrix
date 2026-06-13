@@ -36,7 +36,7 @@ interface SymmetricMatrix<T> : Iterable<T> {
          * Create a symmetric matrix of [size] with the same [element].
          */
         @JvmStatic
-        fun <T> of(size: Int, element: T): SymmetricMatrix<T> = MutableSymmetricMatrix.of(size, element)
+        inline fun <reified T> of(size: Int, element: T): SymmetricMatrix<T> = MutableSymmetricMatrix.of(size, element)
 
         /**
          * Create a symmetric matrix of [size] computing each element based on the provided function [element].

@@ -34,11 +34,11 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
             "Invalid index: $index, not in [0, $internalSize)"
         }
         var i = 0
-        while (i * (i + 1) / 2 <= index) {
+        while (triangularNumber(i) <= index) {
             i++
         }
         i-- // Adjust back to the correct row
-        val j = index - i * (i + 1) / 2
+        val j = index - triangularNumber(i)
         return Pair(min(i, j), max(i, j))
     }
 
@@ -49,7 +49,7 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
         require(max in 0 until size) {
             "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
         }
-        max * (max + 1) / 2 +
+        triangularNumber(max) +
             min(i, j).also { min ->
                 require(min in 0 until size) {
                     "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
@@ -68,8 +68,14 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     protected companion object {
         fun internalSize(size: Int): Int {
             require(size >= 0) { "Invalid matrix size: $size" }
-            val result = size.toLong() * (size.toLong() + 1L) / 2L
+            val result = triangularNumber(size)
             require(result <= Int.MAX_VALUE) { "Matrix size too large: $size" }
+            return result
+        }
+
+        private fun triangularNumber(size: Int): Int {
+            val result = size.toLong() * (size.toLong() + 1L) / 2L
+            require(result <= Int.MAX_VALUE) { "Triangular number too large for index: $size" }
             return result.toInt()
         }
     }

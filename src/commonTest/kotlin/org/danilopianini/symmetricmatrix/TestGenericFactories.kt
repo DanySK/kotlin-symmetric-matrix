@@ -4,9 +4,10 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class TestGenericFactories {
-    private fun <T> immutableMatrixOf(element: T): SymmetricMatrix<T> = SymmetricMatrix.of(2, element)
+    private inline fun <reified T> immutableMatrixOf(element: T): SymmetricMatrix<T> = SymmetricMatrix.of(2, element)
 
-    private fun <T> mutableMatrixOf(element: T): MutableSymmetricMatrix<T> = MutableSymmetricMatrix.of(2, element)
+    private inline fun <reified T> mutableMatrixOf(element: T): MutableSymmetricMatrix<T> =
+        MutableSymmetricMatrix.of(2, element)
 
     @Test
     fun symmetricMatrixFactoryAcceptsGenericElements() {

@@ -25,7 +25,7 @@ interface MutableSymmetricMatrix<T> : SymmetricMatrix<T> {
                 @Suppress("NoNameShadowing") // Both definitions of "size" belong to the public API
                 override val size: Int get() = size
 
-                override fun get(i: Int, j: Int): T = data[indexOf(i, j)] as T
+                override fun get(i: Int, j: Int): T = data[indexOf(i, j)]
 
                 override fun set(i: Int, j: Int, value: T) {
                     data[indexOf(i, j)] = value
@@ -38,7 +38,7 @@ interface MutableSymmetricMatrix<T> : SymmetricMatrix<T> {
         inline fun <reified T> of(size: Int, crossinline element: (i: Int, j: Int) -> T): MutableSymmetricMatrix<T> =
             object : AbstractSymmetricMatrix<T>(), MutableSymmetricMatrix<T> {
 
-                private val data: Array<T> = Array(size * (size + 1) / 2) { index ->
+                private val data: Array<T> = Array(internalSize) { index ->
                     indicesFromIndex(index).let { (i, j) -> element(i, j) }
                 }
 
