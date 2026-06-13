@@ -66,6 +66,11 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     override fun iterator(): Iterator<T> = (0 until size).asSequence().flatMap { row(it).asSequence() }.iterator()
 
     protected companion object {
-        fun internalSize(size: Int): Int = size * (size + 1) / 2
+        fun internalSize(size: Int): Int {
+            require(size >= 0) { "Invalid matrix size: $size" }
+            val result = size.toLong() * (size.toLong() + 1L) / 2L
+            require(result <= Int.MAX_VALUE) { "Matrix size too large: $size" }
+            return result.toInt()
+        }
     }
 }
