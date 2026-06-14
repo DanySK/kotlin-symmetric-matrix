@@ -3,25 +3,23 @@ package org.danilopianini.symmetricmatrix
 /**
  * A mutable symmetric matrix of unsigned bytes.
  */
-class MutableUByteSymmetricMatrix(
-    override val size: Int,
-) : AbstractSymmetricMatrix<UByte>(),
+@OptIn(ExperimentalUnsignedTypes::class)
+class MutableUByteSymmetricMatrix(override val size: Int, init: (Int, Int) -> UByte) :
+    AbstractSymmetricMatrix<UByte>(),
     MutableSymmetricMatrix<UByte> {
-    @OptIn(ExperimentalUnsignedTypes::class)
-    private val data: UByteArray = UByteArray(size * (size + 1) / 2)
+    private val data: UByteArray = UByteArray(internalSize(size))
 
-    @OptIn(ExperimentalUnsignedTypes::class)
-    override operator fun get(
-        i: Int,
-        j: Int,
-    ): UByte = data[indexOf(i, j)]
+    constructor(size: Int) : this(size, 0.toUByte())
 
-    @OptIn(ExperimentalUnsignedTypes::class)
-    override operator fun set(
-        i: Int,
-        j: Int,
-        value: UByte,
-    ) {
+    constructor(size: Int, value: UByte) : this(size, { _, _ -> value })
+
+    init {
+        fillWithSymmetric(init) { index, value -> data[index] = value }
+    }
+
+    override operator fun get(i: Int, j: Int): UByte = data[indexOf(i, j)]
+
+    override operator fun set(i: Int, j: Int, value: UByte) {
         data[indexOf(i, j)] = value
     }
 }
