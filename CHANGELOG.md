@@ -1,3 +1,31 @@
+## [2.0.0](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.15...2.0.0) (2026-06-14)
+
+### ⚠ BREAKING CHANGES
+
+* refactor primitive symmetric matrices to share initializer validation. Update Kotlin-QA to 1.7.1. (#353)
+
+### Dependency updates
+
+* **deps:** update plugin gitsemver to v7.0.21 ([#351](https://github.com/DanySK/kotlin-symmetric-matrix/issues/351)) ([7a257c6](https://github.com/DanySK/kotlin-symmetric-matrix/commit/7a257c6ef6432ae14c998c144909f10bb2d4ac48))
+* **deps:** update plugin gitsemver to v7.0.22 ([#352](https://github.com/DanySK/kotlin-symmetric-matrix/issues/352)) ([af5baae](https://github.com/DanySK/kotlin-symmetric-matrix/commit/af5baaeb39575555d0d8f90aef3ebcc9a0076ea7))
+* **deps:** update plugin multijvmtesting to v4.5.1 ([#346](https://github.com/DanySK/kotlin-symmetric-matrix/issues/346)) ([471b46a](https://github.com/DanySK/kotlin-symmetric-matrix/commit/471b46acb1194a959ba89777a1d68d622e561890))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.18 ([#347](https://github.com/DanySK/kotlin-symmetric-matrix/issues/347)) ([0cf96a9](https://github.com/DanySK/kotlin-symmetric-matrix/commit/0cf96a9dc05aff34a76c3386c9c404f1b6c48742))
+* **deps:** update plugin publishoncentral to v9.2.5 ([#348](https://github.com/DanySK/kotlin-symmetric-matrix/issues/348)) ([2c32939](https://github.com/DanySK/kotlin-symmetric-matrix/commit/2c3293988ee22686c05124cfad188569a83e8dad))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v6.0.3 ([#344](https://github.com/DanySK/kotlin-symmetric-matrix/issues/344)) ([fcfecf1](https://github.com/DanySK/kotlin-symmetric-matrix/commit/fcfecf106d75bcdc05fe485139e7e17fe0a5db31))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.34 ([#349](https://github.com/DanySK/kotlin-symmetric-matrix/issues/349)) ([89b143f](https://github.com/DanySK/kotlin-symmetric-matrix/commit/89b143f0df5433d1906ea9273c65d843d5a0d29a))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.35 ([#350](https://github.com/DanySK/kotlin-symmetric-matrix/issues/350)) ([867880f](https://github.com/DanySK/kotlin-symmetric-matrix/commit/867880f43fff62631bf8979dc2fd6b3bb92df8ac))
+
+### General maintenance
+
+* create AGENTS.md ([a3673b5](https://github.com/DanySK/kotlin-symmetric-matrix/commit/a3673b57375700a2dc79c366815beac269276e42))
+
+### Refactoring
+
+* refactor primitive symmetric matrices to share initializer validation. Update Kotlin-QA to 1.7.1. ([#353](https://github.com/DanySK/kotlin-symmetric-matrix/issues/353)) ([c01ebc4](https://github.com/DanySK/kotlin-symmetric-matrix/commit/c01ebc457fab6a6d7ae2e89071d6b81bef01b85b))
+
 ## [1.1.15](https://github.com/DanySK/kotlin-symmetric-matrix/compare/1.1.14...1.1.15) (2026-06-03)
 
 ### Dependency updates
