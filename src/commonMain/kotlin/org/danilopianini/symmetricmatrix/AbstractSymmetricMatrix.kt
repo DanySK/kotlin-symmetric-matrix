@@ -7,7 +7,7 @@ import kotlin.math.min
  * Indexing functions for symmetric matrices.
  */
 abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
-    protected val internalSize: Int get() = internalSize(size)
+    protected val internalSize: Int get() = symmetricMatrixInternalSize(size)
 
     protected fun fillWithSymmetric(function: (i: Int, j: Int) -> T, set: (index: Int, value: T) -> Unit) {
         for (i in 0 until size) {
@@ -29,33 +29,12 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
     /**
      * Given an [index] in the internal representation of the matrix, return the corresponding indices.
      */
-    protected fun indicesFromIndex(index: Int): Pair<Int, Int> {
-        require(index in 0 until internalSize) {
-            "Invalid index: $index, not in [0, $internalSize)"
-        }
-        var i = 0
-        while (triangularNumber(i) <= index) {
-            i++
-        }
-        i-- // Adjust back to the correct row
-        val j = index - triangularNumber(i)
-        return Pair(min(i, j), max(i, j))
-    }
+    protected fun indicesFromIndex(index: Int): Pair<Int, Int> = symmetricMatrixIndicesFromIndex(size, index)
 
     /**
      * Given two indices ([i], [j]), return the corresponding index in the internal representation of the matrix.
      */
-    protected fun indexOf(i: Int, j: Int): Int = max(i, j).let { max ->
-        require(max in 0 until size) {
-            "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
-        }
-        triangularNumber(max) +
-            min(i, j).also { min ->
-                require(min in 0 until size) {
-                    "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
-                }
-            }
-    }
+    protected fun indexOf(i: Int, j: Int): Int = symmetricMatrixIndexOf(size, i, j)
 
     override fun row(i: Int): List<T> = (0 until size).map { j -> get(i, j) }
 
@@ -65,15 +44,47 @@ abstract class AbstractSymmetricMatrix<T> : SymmetricMatrix<T> {
 
     override fun iterator(): Iterator<T> = (0 until size).asSequence().flatMap { row(it).asSequence() }.iterator()
 
-    protected companion object {
-        fun internalSize(size: Int): Int {
+    @PublishedApi
+    internal companion object {
+
+        @PublishedApi
+        internal fun internalSize(size: Int): Int = symmetricMatrixInternalSize(size)
+
+        fun symmetricMatrixInternalSize(size: Int): Int {
             require(size >= 0) { "Invalid matrix size: $size" }
-            val result = triangularNumber(size)
-            require(result <= Int.MAX_VALUE) { "Matrix size too large: $size" }
-            return result
+            return symmetricMatrixTriangularNumber(size)
         }
 
-        private fun triangularNumber(size: Int): Int {
+        @PublishedApi
+        internal fun symmetricMatrixIndicesFromIndex(size: Int, index: Int): Pair<Int, Int> {
+            val internalSize = symmetricMatrixInternalSize(size)
+            require(index in 0 until internalSize) {
+                "Invalid index: $index, not in [0, $internalSize)"
+            }
+            var i = 0
+            while (symmetricMatrixTriangularNumber(i) <= index) {
+                i++
+            }
+            i-- // Adjust back to the correct row
+            val j = index - symmetricMatrixTriangularNumber(i)
+            return Pair(min(i, j), max(i, j))
+        }
+
+        @PublishedApi
+        internal fun symmetricMatrixIndexOf(size: Int, i: Int, j: Int): Int = max(i, j).let { max ->
+            require(max in 0 until size) {
+                "Invalid index: ($i, $j), max($i, $j) not in [0, $size)"
+            }
+            symmetricMatrixTriangularNumber(max) +
+                min(i, j).also { min ->
+                    require(min in 0 until size) {
+                        "Invalid index: ($i, $j), min($i, $j) not in [0, $size)"
+                    }
+                }
+        }
+
+        @PublishedApi
+        internal fun symmetricMatrixTriangularNumber(size: Int): Int {
             val result = size.toLong() * (size.toLong() + 1L) / 2L
             require(result <= Int.MAX_VALUE) { "Triangular number too large for index: $size" }
             return result.toInt()
